@@ -36,7 +36,7 @@ var Uscita = /** @class */ (function (_super) {
     };
     return Uscita;
 }(User));
-var user1 = new Uscita(4);
+var user1 = new Uscita(Math.floor(Math.random()*100));
 var user2 = new Uscita(20);
 var user3 = new Uscita(30);
 console.log("Chiamata effettuata da user1:", user1.chiama());
