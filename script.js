@@ -29,19 +29,18 @@ var Uscita = /** @class */ (function (_super) {
         return _this;
     }
     Uscita.prototype.chiama = function () {
-        var minutiChiamate = Math.floor(Math.random() * this.ricarica + 1);
-        this.numeroChiamate += 1;
-        this.ricarica -= 0.2 * minutiChiamate;
-        return minutiChiamate;
+        var minutiChiamata = Math.floor(Math.random() * this.ricarica + 1);
+        this.numeroChiamate++;
+        this.ricarica -= 0.2 * minutiChiamata;
+        return minutiChiamata;
     };
     return Uscita;
 }(User));
-var user1 = new Uscita(10);
+var user1 = new Uscita(4);
 var user2 = new Uscita(20);
 var user3 = new Uscita(30);
-var numeroUtenti = 1;
-for (var i = 0; i < numeroUtenti; i++) {
-    var user = new Uscita(Math.floor(Math.random() * 100));
-    console.log(user.chiama());
-}
-console.log(user1.chiama());
+console.log("Chiamata effettuata da user1:", user1.chiama());
+console.log("Numero chiamate di user1:", user1.numeroChiamate);
+console.log("Saldo residuo di user1:", user1.ricarica);
+var saldoConto = document.getElementById("saldoConto");
+saldoConto.textContent = user1.ricarica.toFixed(2) + "€";
